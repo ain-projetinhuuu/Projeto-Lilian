@@ -1,129 +1,73 @@
-var res1 = document.getElementsByName('botao1');
-var res2 = document.getElementsByName('botao2');
-var res3 = document.getElementsByName('botao3');
-var res4 = document.getElementsByName('botao4');
-var res5 = document.getElementsByName('botao5');
-var res6 = document.getElementsByName('botao6');
-var res7 = document.getElementsByName('botao7');
-var res8 = document.getElementsByName('botao8');
-var res9 = document.getElementsByName('botao9');
-var res10 = document.getElementsByName('botao10');
-var res11 = document.getElementsByName('botao11');
-var res12 = document.getElementsByName('botao12');
-var res13 = document.getElementsByName('botao13');
-var res14 = document.getElementsByName('botao14');
-var res15 = document.getElementsByName('botao15');
-var res16 = document.getElementsByName('botao16');
-var res17 = document.getElementsByName('botao17');
-var res18 = document.getElementsByName('botao18');
-var res19 = document.getElementsByName('botao19');
-var res20 = document.getElementsByName('botao20');
-var res21 = document.getElementsByName('botao21');
+const armazenar = (data) => {
+    for(let key=0;key < respostas.length;key++){
+        if(respostas[key].idQuest === data.idQuest) {
+            respostas[key].valueQuest = data.valueQuest;
+            return;
+        }
+    }
+    respostas.push(data);
+ };
+
+const addActionInRadio = (arrayTagsRadios) => {
+    for (let key = 0; key < arrayTagsRadios.length; key++) {
+        arrayTagsRadios[key].addEventListener("change", (e) => {
+         armazenar({idQuest:e.path[0].name,valueQuest:e.path[0].value});
+        });
+    }
+ }
+
+const calcular = () => {
+    let total = 0;
+    for(let key=0;key<respostas.length;key++) {
+        total += parseInt(respostas[key].valueQuest);
+    }
+    //if(total>3)alert('Lascoo');
+    console.log(total);
+    return total;
+}
+
+const res1 = document.getElementsByName('botao1');
+const res2 = document.getElementsByName('botao2');
+const res3 = document.getElementsByName('botao3');
+const res4 = document.getElementsByName('botao4');
+const res5 = document.getElementsByName('botao5');
+const res6 = document.getElementsByName('botao6');
+const res7 = document.getElementsByName('botao7');
+const res8 = document.getElementsByName('botao8');
+const res9 = document.getElementsByName('botao9');
+const res10 = document.getElementsByName('botao10');
+const res11 = document.getElementsByName('botao11');
+const res12 = document.getElementsByName('botao12');
+const res13 = document.getElementsByName('botao13');
+const res14 = document.getElementsByName('botao14');
+const res15 = document.getElementsByName('botao15');
+const res16 = document.getElementsByName('botao16');
+const res17 = document.getElementsByName('botao17');
+const res18 = document.getElementsByName('botao18');
+const res19 = document.getElementsByName('botao19');
+const res20 = document.getElementsByName('botao20');
+const res21 = document.getElementsByName('botao21');
 let respostas = [];
 
+ addActionInRadio(res1);
+ addActionInRadio(res2);
+ addActionInRadio(res3);
+ addActionInRadio(res4);
+ addActionInRadio(res5);
+ addActionInRadio(res6);
+ addActionInRadio(res7);
+ addActionInRadio(res8);
+ addActionInRadio(res9);
+ addActionInRadio(res10);
+ addActionInRadio(res11);
+ addActionInRadio(res12);
+ addActionInRadio(res13);
+ addActionInRadio(res14);
+ addActionInRadio(res15);
+ addActionInRadio(res16);
+ addActionInRadio(res17);
+ addActionInRadio(res18);
+ addActionInRadio(res19);
+ addActionInRadio(res20);
+ addActionInRadio(res21);
 
-for (let key = 0; key < res1.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res2.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res3.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res4.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res5.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res6.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res7.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res8.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res9.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res10.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res11.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res12.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res13.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res14.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res15.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res16.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res17.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res18.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res19.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res20.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
-for (let key = 0; key < res21.length; key++) {
-    res1[key].addEventListener("change", (e) => {
-        armazenar(e.path);
-    });
-}
